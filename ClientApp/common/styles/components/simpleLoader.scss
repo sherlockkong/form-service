@@ -1,0 +1,64 @@
+.ef-simple-loader {
+	width: 60px;
+	height: 60px;
+	padding: 15px 0;
+
+	text-align: center;
+
+	> div {
+		width: 30px;
+		height: 30px;
+		margin: 0 auto;
+
+		animation: ef-simple-loader-animation 1035ms infinite linear;
+
+		border: 4px solid;
+		border-color: $ef-text;
+		border-radius: 50%;
+	}
+
+	&.ef-inverted {
+		> div {
+			border-color: $ef-text-inv;
+		}
+	}
+
+	&--style-white {
+		> div {
+			border-color: #ffffff;
+		}
+
+		&.ef-inverted {
+			> div {
+				border-color: #ffffff;
+			}
+		}
+	}
+
+	&--style-accent {
+		> div {
+			border-color: $ef-accent;
+		}
+
+		&.ef-inverted {
+			> div {
+				border-color: $ef-accent;
+			}
+		}
+	}
+
+	@keyframes ef-simple-loader-animation {
+		0% {
+			transform: scale(0);
+			transform: scale(0);
+		}
+		90% {
+			transform: scale(0.7);
+			transform: scale(0.7);
+		}
+		100% {
+			transform: scale(1);
+			transform: scale(1);
+		}
+	}
+}

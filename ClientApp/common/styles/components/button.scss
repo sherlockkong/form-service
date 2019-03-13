@@ -1,0 +1,236 @@
+.btn {
+	&:not([disabled]):not(.disabled):focus {
+		box-shadow: none;
+	}
+
+	&:not([disabled]):not(.disabled):active {
+		box-shadow: none;
+	}
+}
+
+.ef-btn {
+	position: relative;
+	overflow: hidden;
+
+	margin: 0;
+	padding: 0;
+
+	color: $ef-text;
+	border: 0;
+	border-radius: $ef-border-rad;
+	background-color: $ef-bg-dk;
+
+	font-size: $ef-font-size-sm;
+
+	span {
+		padding: 0 10px;
+	}
+
+	&:not([disabled]):not(.disabled):hover {
+		background-color: darken($ef-bg-dk, 5%);
+	}
+
+	&:not([disabled]):not(.disabled):active {
+		background-color: darken($ef-bg-dk, 10%);
+	}
+
+	&.ef-inverted {
+		color: $ef-text-inv;
+		background-color: $ef-bg-inv-dk;
+
+		&:not([disabled]):not(.disabled):hover {
+			background-color: darken($ef-bg-inv-dk, 5%);
+		}
+
+		&:not([disabled]):not(.disabled):active {
+			background-color: darken($ef-bg-inv-dk, 10%);
+		}
+	}
+}
+
+.ef-btn.ef-btn-accent {
+	color: #fff;
+	background-color: $ef-accent;
+
+	&:not([disabled]):not(.disabled):hover {
+		background-color: darken($ef-accent, 5%);
+	}
+
+	&:not([disabled]):not(.disabled):active {
+		background-color: darken($ef-accent, 10%);
+	}
+}
+
+.ef-btn.ef-btn-transparent {
+	background-color: transparent;
+
+	&:not([disabled]):not(.disabled):hover {
+		background-color: transparentize(#000, .88);
+	}
+
+	&:not([disabled]):not(.disabled):active {
+		background-color: transparentize(#000, .77);
+	}
+}
+
+.ef-btn.ef-btn-link {
+	background-color: transparent;
+
+	&:not([disabled]):not(.disabled):hover {
+		color: darken($ef-accent, 5%);
+		background-color: transparent;
+	}
+
+	&:not([disabled]):not(.disabled):active {
+		color: darken($ef-accent, 10%);
+		background-color: transparent;
+	}
+}
+
+.ef-dd-open {
+	.ef-btn {
+		background-color: darken($ef-bg-dk, 10%);
+
+		&:not([disabled]):not(.disabled):hover {
+			background-color: darken($ef-bg-dk, 10%);
+		}
+
+		&:not([disabled]):not(.disabled):active {
+			background-color: darken($ef-bg-dk, 10%);
+		}
+
+		&.ef-inverted {
+			background-color: darken($ef-bg-inv-dk, 10%);
+
+			&:not([disabled]):not(.disabled):hover {
+				background-color: darken($ef-bg-inv-dk, 10%);
+			}
+
+			&:not([disabled]):not(.disabled):active {
+				background-color: darken($ef-bg-inv-dk, 10%);
+			}
+		}
+	}
+
+	.ef-btn.ef-btn-accent {
+		background-color: darken($ef-accent, 10%);
+
+		&:not([disabled]):not(.disabled):hover {
+			background-color: darken($ef-accent, 10%);
+		}
+
+		&:not([disabled]):not(.disabled):active {
+			background-color: darken($ef-accent, 10%);
+		}
+	}
+
+	.ef-btn.ef-btn-transparent {
+		background-color: transparentize(#000, .77);
+
+		&:not([disabled]):not(.disabled):hover {
+			background-color: transparentize(#000, .77);
+		}
+
+		&:not([disabled]):not(.disabled):active {
+			background-color: transparentize(#000, .77);
+		}
+	}
+
+	.ef-btn.ef-btn-link {
+		color: darken($ef-accent, 10%);
+		background-color: transparent;
+
+		&:not([disabled]):not(.disabled):hover {
+			color: darken($ef-accent, 10%);
+			background-color: transparent;
+		}
+
+		&:not([disabled]):not(.disabled):active {
+			color: darken($ef-accent, 10%);
+			background-color: transparent;
+		}
+	}
+}
+
+.ef-btn-icon {
+	> span {
+		padding-left: $ef-size-default;
+	}
+
+	&.ef-size-sm {
+		> span {
+			padding-left: $ef-size-small;
+		}
+	}
+
+	&.ef-size-lg {
+		> span {
+			padding-left: $ef-size-large;
+		}
+	}
+}
+
+
+.ef-btn.ef-stacked {
+	min-width: $ef-size-large;
+	height: $ef-size-large;
+
+	line-height: $ef-size-large;
+
+	> i {
+		position: absolute;
+		top: 5px;
+		left: 0;
+
+		width: 100%;
+		height: 30px;
+		padding: 0 10px;
+
+		line-height: 30px;
+	}
+
+	> span {
+		display: block;
+
+		min-width: $ef-size-large;
+		height: $ef-size-large;
+		padding: 35px 10px 0 10px;
+
+		line-height: 20px;
+	}
+}
+
+.ef-btn.ef-size-sm.ef-stacked {
+	min-width: $ef-size-default;
+	height: $ef-size-default;
+
+	line-height: $ef-size-default;
+
+	> i {
+		top: 0;
+
+		height: 20px;
+
+		line-height: 25px;
+	}
+
+	> span {
+		display: block;
+
+		min-width: $ef-size-default;
+		height: $ef-size-default;
+		padding: 20px 10px 0 10px;
+
+		line-height: 18px;
+	}
+}
+
+.ef-btn.ef-size-lg.ef-stacked {
+	> span {
+		line-height: 24px;
+	}
+}
+
+.ef-btn.ef-invalid {
+	border-bottom: 2px solid $danger;
+}

@@ -1,0 +1,43 @@
+.ap-main-menu {
+	background: $ef-accent;
+	color: white;
+	padding: 0 20px;
+
+	@import './nav.scss';
+
+	.mm-header {
+		height: 50px;
+
+		@include flex-center-v;
+		justify-content: space-between;
+
+		.h-name-editor {
+			width: 300px;
+			background: transparent !important;
+			padding: 0;
+			color: white;
+
+			&:focus {
+				border-bottom: 2px solid white !important;
+			}
+		}
+
+		button {
+			color: white;
+			background: $ef-accent-dk;
+			min-width: 80px;
+
+			&:hover {
+				background: $ef-accent-lt !important;
+			}
+
+			&:disabled {
+				background: $ef-accent-dk !important;
+			}
+		}
+	}
+
+	.mm-nav {
+		height: 40px;
+	}
+}

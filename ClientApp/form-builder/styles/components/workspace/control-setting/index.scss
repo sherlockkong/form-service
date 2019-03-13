@@ -1,0 +1,95 @@
+.ap-control-setting {
+	background: white;
+	margin-bottom: 20px;
+	
+	min-height: 250px;
+
+	.cs-title {
+		padding: 10px 20px;
+		font-size: $ef-font-size;
+
+		border-bottom: 1px solid $ef-border;
+	}
+
+	.check-wp {
+		padding: 20px;
+	}
+
+	.common-setting,
+	.sub-setting {
+		padding: 0 20px 0 20px;
+	}
+
+	.number-check-setting {
+		margin: 15px 20px 0 20px;
+		display: flex;
+
+		.checkbox-wp {
+			margin-right: 5px;
+		}
+
+		.number-wp {
+			flex: 1;
+		}
+	}
+
+	.st-title {
+		font-size: $ef-font-size-sm;
+		padding: 15px 0 2px 0;
+		color: $ef-subtitle;
+	}
+
+	input {
+		background: none !important;
+		border-bottom: 1px solid $ef-border !important;
+
+		&:focus {
+			border-bottom: 1px solid $ef-accent !important;
+		}
+	}
+
+	.mc-setting {
+		.add-btn {
+			margin: 5px 0 0 5px;
+			color: $ef-accent;
+		}
+	}
+
+	.align-items {
+		display: flex;
+
+		.align-item {
+			flex: 1;
+			cursor: pointer;
+
+			&.selected {
+				color: $ef-accent;
+			}
+		}
+	}
+
+	.score-items {
+		display: flex;
+		border: 1px solid $ef-accent;
+		border-right: none;
+		font-size: $ef-font-size-sm;
+		height: 25px;
+
+		.score-item {
+			flex: 1;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-right: 1px solid $ef-accent;
+			color: $ef-accent;
+
+			&.selected {
+				color: white;
+				background: $ef-accent;
+			}
+		}
+	}
+
+	@import './items-editor.scss';
+}

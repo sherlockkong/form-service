@@ -1,0 +1,19 @@
+.phone {
+	.ph-input-wp {
+		display: flex;
+		align-items: center;
+		margin-top: 20px;
+
+		.cn-icon {
+			flex: 0 0 20px;
+			height: 20px;
+
+			background: center no-repeat url('~/images/cn.svg');
+			margin-right: 10px;
+		}
+
+		.ph-input {
+			flex: 1;
+		}
+	}
+}

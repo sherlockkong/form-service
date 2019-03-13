@@ -1,0 +1,93 @@
+/* --------------------------- */
+/*        App Variables        */
+/* --------------------------- */
+
+/*
+	bg - background
+	inv - inverted version
+	lt - lighter color version
+	dk - darker color version
+*/
+
+$ef-subtitle: rgba(0, 0, 0, .4);
+$ef-border: rgba(0, 0, 0, .1);
+
+$ef-accent: #912f40;
+$ef-accent-lt: #9b4151;
+$ef-accent-dk: #772735;
+
+$ef-font-size: 14px;
+$ef-font-size-sm: 12px;
+$ef-font-size-lg: 16px;
+
+$ef-icon-18: 18px;
+$ef-icon-20: 20px;
+$ef-icon-24: 24px;
+$ef-icon-36: 36px;
+$ef-icon-48: 48px;
+
+$ef-bg: #e0ddcf;
+$ef-bg-lt: lighten($ef-bg, 5%);
+$ef-bg-dk: darken($ef-bg, 5%);
+
+$ef-bg-inv: #5c2029;
+$ef-bg-inv-lt: lighten($ef-bg-inv, 5%);
+$ef-bg-inv-dk: darken($ef-bg-inv, 5%);
+
+$ef-text: #1f0b0e;
+$ef-text-disabled: #331217;
+$ef-text-inv: #fcfbfa;
+$ef-text-disabled-inv: #f2ebec;
+
+$ef-body-bg: $ef-bg;
+$ef-body-color: $ef-text;
+
+$ef-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+$ef-shadow-border: 0 0 5px 1px rgba(0, 0, 0, .1);
+$ef-border-rad: 2px;
+$ef-transition: all .2s ease-in-out;
+
+$ef-size-default: 40px;
+$ef-size-small: 30px;
+$ef-size-large: 60px;
+
+// TRANSPARENT HOVER
+$ef-hover: transparentize(#000, .9);
+$ef-hover-inv: transparentize(#000, .85);
+
+// MENU
+$ef-menu-bg: $ef-bg-inv;
+$ef-menu-width: 330px;
+$ef-menu-glass: transparentize($ef-menu-bg, .05);
+
+// SIDEBAR
+$ef-sb-bg: $ef-bg-inv;
+$ef-sb-width: 330px;
+
+// TABS
+$ef-tabs-bg: $ef-bg-dk;
+$ef-tabs-bg-hover: darken($ef-bg-dk, 5%);
+
+// CONTROLS
+$efc-bg: transparentize(#000, .95);
+$efc-bg-hover: transparentize(#000, .95);
+$efc-bg-focus: transparentize(#000, .9);
+
+/* --------------------------- */
+/*     Bootstrap Override      */
+/* --------------------------- */
+
+$primary: $ef-accent;
+$warning: #FDD835;
+$danger: #E53935;
+
+$theme-colors: (
+	"primary": $ef-accent,
+	"warning": #FDD835,
+	"danger": #E53935
+	);
+
+$body-bg: $ef-body-bg;
+$body-color: $ef-body-color;
+
+$ef-border-radius: $ef-border-rad;

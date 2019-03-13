@@ -1,0 +1,13 @@
+@import "../../../common/styles/variables/blue.scss";
+
+.theme-blue {
+	color: $ef-body-color;
+	background-color: $ef-body-bg;
+
+	@import "../../../common/styles/global.scss";
+	@import "../../../common/styles/components/index.scss";
+
+	@import "../components/index.scss";
+
+	@import "../../../common/styles/utils.scss";
+}

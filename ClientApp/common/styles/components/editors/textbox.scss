@@ -1,0 +1,65 @@
+.efc-textbox, input[type=text].efc-textbox, input[type=password].efc-textbox, input[type=email].efc-textbox, input[type=url].efc-textbox {
+	display: block;
+
+	width: 100%;
+	height: 30px;
+	padding: 0 10px;
+
+	transition: $ef-transition;
+
+	color: $ef-text;
+	border: 2px solid transparent;
+	border-radius: $ef-border-rad;
+	background-color: $ef-bg-dk;
+	box-shadow: none;
+
+	font-size: $ef-font-size-sm;
+	line-height: 26px;
+
+	&:not([disabled]):hover {
+		background-color: darken($ef-bg-dk, 5%);
+	}
+
+	&:not([disabled]):focus {
+		border-bottom: 2px solid $ef-accent;
+		outline: none;
+		background-color: darken($ef-bg-dk, 7%);
+		box-shadow: none;
+	}
+
+	&.efc-invalid {
+		border-bottom: 2px solid $danger;
+
+		&:focus {
+			border-bottom: 2px solid $danger;
+		}
+	}
+
+	&.efc-disabled {
+		cursor: default;
+
+		color: $ef-text-disabled;
+		opacity: .4;
+	}
+
+	&.efc-inverted {
+		color: $ef-text-inv;
+		background-color: $ef-bg-inv-dk;
+
+		&:not([disabled]):hover {
+			background-color: darken($ef-bg-inv-dk, 5%);
+		}
+
+		&:not([disabled]):focus {
+			background-color: darken($ef-bg-inv-dk, 7%);
+		}
+
+		&.efc-disabled {
+			color: $ef-text-disabled-inv;
+		}
+	}
+}
+
+textarea.efc-textbox {
+	height: initial;
+}

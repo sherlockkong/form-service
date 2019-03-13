@@ -1,0 +1,307 @@
+.rdt {
+	position: relative;
+}
+
+.efc-datetime {
+	.rdtPicker {
+		position: absolute;
+		z-index: 99999 !important;
+
+		display: none;
+
+		width: 100%;
+		margin: 5px 0;
+		padding: 4px;
+
+		border: 0;
+		border-radius: $ef-border-rad;
+		background-color: $ef-bg-lt;
+		box-shadow: $ef-shadow-border;
+
+		font-size: $ef-font-size-sm;
+	}
+
+	&.rdtOpen {
+		.rdtPicker {
+			display: block;
+		}
+
+		.efc-textbox {
+			border-bottom: 2px solid $ef-accent;
+			outline: none;
+			background-color: darken($ef-bg-dk, 7%);
+			box-shadow: none;
+		}
+	}
+
+	&.rdtStatic {
+		.rdtPicker {
+			position: static;
+
+			box-shadow: none;
+		}
+	}
+
+	.rdtPicker .rdtTimeToggle {
+		text-align: center;
+	}
+
+	.rdtPicker table {
+		width: 100%;
+		margin: 0;
+	}
+	.rdtPicker td, .rdtPicker th {
+		height: 28px;
+
+		text-align: center;
+
+		color: $ef-text;
+		border-radius: $ef-border-rad;
+
+		line-height: 28px;
+	}
+	.rdtPicker td {
+		cursor: pointer;
+	}
+	.rdtPicker td.rdtDay:hover, .rdtPicker td.rdtHour:hover, .rdtPicker td.rdtMinute:hover, .rdtPicker td.rdtSecond:hover, .rdtPicker .rdtTimeToggle:hover {
+		cursor: pointer;
+
+		background: darken($ef-bg-lt, 5%);
+	}
+	.rdtPicker td.rdtOld, .rdtPicker td.rdtNew {
+		color: $ef-text-disabled;
+	}
+	.rdtPicker td.rdtToday {
+		position: relative;
+	}
+	.rdtPicker td.rdtToday:before {
+		position: absolute;
+		right: 4px;
+		bottom: 4px;
+
+		display: inline-block;
+
+		content: '';
+
+		border-bottom: 7px solid $ef-accent;
+		border-left: 7px solid transparent;
+	}
+	.rdtPicker td.rdtActive, .rdtPicker td.rdtActive:hover {
+		color: white;
+		background-color: $ef-accent;
+
+		font-weight: bold;
+	}
+	.rdtPicker td.rdtActive.rdtToday:before {
+		border-bottom-color: #fff;
+	}
+	.rdtPicker td.rdtDisabled, .rdtPicker td.rdtDisabled:hover {
+		cursor: not-allowed;
+
+		color: $ef-text-disabled;
+		background: none;
+	}
+
+	.rdtPicker td span.rdtOld {
+		color: $ef-text-disabled;
+	}
+	.rdtPicker td span.rdtDisabled, .rdtPicker td span.rdtDisabled:hover {
+		cursor: not-allowed;
+
+		color: $ef-text-disabled;
+		background: none;
+	}
+	.rdtPicker th {
+		border-bottom: 1px solid darken($ef-bg-lt, 5%);
+	}
+	.rdtPicker .dow {
+		width: 14.2857%;
+
+		border-bottom: none;
+	}
+	.rdtPicker th.rdtSwitch {
+		width: 100px;
+	}
+	.rdtPicker th.rdtNext, .rdtPicker th.rdtPrev {
+		vertical-align: top;
+
+		font-size: 21px;
+	}
+
+	.rdtPrev span, .rdtNext span {
+		display: block;
+
+		-webkit-user-select: none;   /* Chrome/Safari/Opera */
+		-moz-user-select: none;      /* Firefox */
+		-ms-user-select: none;       /* Internet Explorer/Edge */
+		user-select: none;
+
+		font-weight: normal;
+		line-height: 24px;
+
+		-webkit-touch-callout: none; /* iOS Safari */
+		-khtml-user-select: none;    /* Konqueror */
+	}
+
+	.rdtPicker th.rdtDisabled, .rdtPicker th.rdtDisabled:hover {
+		cursor: not-allowed;
+
+		color: $ef-text-disabled;
+		background: none;
+	}
+	.rdtPicker thead tr:first-child th {
+		cursor: pointer;
+	}
+	.rdtPicker thead tr:first-child th:hover {
+		background: darken($ef-bg-lt, 5%);
+	}
+
+	.rdtPicker tfoot {
+		border-top: 1px solid darken($ef-bg-lt, 5%);
+	}
+
+	.rdtPicker button {
+		cursor: pointer;
+
+		border: none;
+		background: none;
+	}
+	.rdtPicker button:hover {
+		background-color: darken($ef-bg-lt, 5%);;
+	}
+
+	.rdtPicker thead button {
+		width: 100%;
+		height: 100%;
+	}
+
+	td.rdtMonth, td.rdtYear {
+		width: 25%;
+		height: 50px;
+
+		cursor: pointer;
+	}
+	td.rdtMonth:hover, td.rdtYear:hover {
+		background: darken($ef-bg-lt, 5%);
+	}
+
+	.rdtCounters {
+		display: inline-block;
+
+		vertical-align: middle;
+	}
+
+	.rdtCounters> div {
+		float: left;
+	}
+
+	.rdtCounter {
+		width: 40px;
+		height: 100px;
+	}
+
+	.rdtCounterSeparator {
+		line-height: 100px;
+	}
+
+	.rdtCounter .rdtBtn {
+		display: block;
+
+		height: 30px;
+		margin: 5px;
+
+		cursor: pointer;
+		-webkit-user-select: none;   /* Chrome/Safari/Opera */
+		-moz-user-select: none;      /* Firefox */
+		-ms-user-select: none;       /* Internet Explorer/Edge */
+		user-select: none;
+
+		border-radius: 50%;
+
+		line-height: 30px;
+
+		-webkit-touch-callout: none; /* iOS Safari */
+		-khtml-user-select: none;    /* Konqueror */
+	}
+	.rdtCounter .rdtBtn:hover {
+		background: darken($ef-bg-lt, 5%);
+	}
+	.rdtCounter .rdtCount {
+		height: 20%;
+
+		font-size: 1.2em;
+		line-height: 20px;
+	}
+
+	.rdtMilli {
+		width: 48px;
+		padding-left: 8px;
+
+		vertical-align: middle;
+	}
+
+	.rdtMilli input {
+		width: 100%;
+		margin-top: 37px;
+
+		font-size: 1.2em;
+	}
+}
+
+.efc-datetime.efc-inverted {
+	.rdtPicker {
+		background-color: $ef-bg-inv-lt;
+	}
+
+	.rdtPicker td, .rdtPicker th {
+		color: $ef-text-inv;
+	}
+
+	.rdtPicker td.rdtDay:hover, .rdtPicker td.rdtHour:hover, .rdtPicker td.rdtMinute:hover, .rdtPicker td.rdtSecond:hover, .rdtPicker .rdtTimeToggle:hover {
+		background: $ef-bg-inv;
+	}
+
+	.rdtPicker td.rdtOld, .rdtPicker td.rdtNew {
+		color: $ef-text-disabled-inv;
+	}
+
+	.rdtPicker td.rdtDisabled, .rdtPicker td.rdtDisabled:hover {
+		color: $ef-text-disabled-inv;
+	}
+
+	.rdtPicker td span.rdtOld {
+		color: $ef-text-disabled-inv;
+	}
+
+	.rdtPicker td span.rdtDisabled, .rdtPicker td span.rdtDisabled:hover {
+		color: $ef-text-disabled-inv;
+	}
+
+	.rdtPicker th {
+		border-bottom: 1px solid $ef-bg-inv;
+	}
+
+	.rdtPicker th.rdtDisabled, .rdtPicker th.rdtDisabled:hover {
+		color: $ef-text-disabled-inv;
+	}
+
+	.rdtPicker thead tr:first-child th:hover {
+		background: $ef-bg-inv;
+	}
+
+	.rdtPicker tfoot {
+		border-top: 1px solid $ef-bg-inv;
+	}
+
+	.rdtPicker button:hover {
+		background-color: $ef-bg-inv;
+	}
+
+	td.rdtMonth:hover, td.rdtYear:hover {
+		background: $ef-bg-inv;
+	}
+
+	.rdtCounter .rdtBtn:hover {
+		background: $ef-bg-inv;
+	}
+}

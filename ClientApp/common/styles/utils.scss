@@ -1,0 +1,107 @@
+.ef-pos-lt {
+	left: 0;
+}
+
+.ef-pos-ctr {
+	left: 50%;
+}
+
+.ef-pos-rt {
+	right: 0;
+}
+
+.ef-pos-top {
+	top: 0;
+}
+
+.ef-pos-btm {
+	bottom: 0;
+}
+
+@keyframes btn_icon_animation {
+	0% { transform: rotate(0); }
+	50% { transform: rotate(180deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.ef-anim-icon {
+	animation: btn_icon_animation .62s infinite linear;
+}
+
+.ef-block {
+	display: block;
+
+	min-width: $ef-size-default;
+	height: $ef-size-default;
+
+	line-height: $ef-size-default;
+}
+
+.ef-inline-block {
+	display: inline-block;
+
+	min-width: $ef-size-default;
+	height: $ef-size-default;
+
+	vertical-align: top;
+
+	line-height: $ef-size-default;
+}
+
+.ef-size-sm {
+	min-width: $ef-size-small;
+	height: $ef-size-small;
+
+	line-height: $ef-size-small;
+}
+
+.ef-size-lg {
+	min-width: $ef-size-large;
+	height: $ef-size-large;
+
+	line-height: $ef-size-large;
+}
+
+.ef-rounded {
+	border-radius: $ef-size-default / 2;
+
+	&.ef-size-sm {
+		border-radius: $ef-size-small / 2;
+	}
+
+	&.ef-size-lg {
+		border-radius: $ef-size-large / 2;
+	}
+}
+
+.ef-thumb-vertical {
+	width: 2px;
+	margin-left: 2px;
+
+	cursor: n-resize;
+
+	border-radius: 4px;
+	background-color: transparentize(#000, 0.9);
+}
+
+.ef-thumb-horizontal {
+	height: 2px;
+	margin-top: 2px;
+
+	cursor: w-resize;
+
+	border-radius: 4px;
+	background-color: transparentize(#000, 0.9);
+}
+
+.ef-inverted {
+
+	.ef-thumb-vertical {
+		background-color: transparentize(#fff, 0.9);
+	}
+
+	.ef-thumb-horizontal {
+		background-color: transparentize(#fff, 0.9);
+	}
+
+}

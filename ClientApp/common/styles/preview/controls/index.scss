@@ -1,0 +1,118 @@
+.ctl-pv {
+	border-bottom: 1px solid $ef-border;
+	font-size: $ef-font-size-sm;
+	padding: 30px 25px;
+
+	.question {
+		font-weight: bold;
+	}
+
+	.description {
+		margin-top: 5px;
+		color: $ef-subtitle;
+	}
+
+	input {
+		padding: 0;
+		background: none !important;
+		border-bottom: 1px solid $ef-border !important;
+
+		&:focus {
+			border-bottom: 1px solid $ef-accent !important;
+		}
+	}
+}
+
+.ctl-wp {
+	position: relative;
+	cursor: pointer;
+
+	.error-msg {
+		color: $danger;
+		background-color: transparentize($danger, .75);
+
+		position: absolute;
+		left: 25px;
+		bottom: 5px;
+		right: 25px;
+		padding-left: 10px;
+	}
+
+	.indicator {
+		background: $ef-accent;
+		height: 100%;
+		width: 2px;
+
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		display: none;
+	}
+
+	.delete-btn,
+	.down-btn,
+	.up-btn {
+		position: absolute;
+		top: 10px;
+		display: none;
+		color: $ef-accent;
+	}
+
+	.delete-btn {
+		right: 10px;
+	}
+
+	.down-btn {
+		right: 42px;
+	}
+
+	.up-btn {
+		right: 74px;
+	}
+
+	&.selected {
+		background: $ef-bg-lt;
+
+		.indicator {
+			display: block;
+		}
+
+		.delete-btn,
+		.down-btn,
+		.up-btn {
+			display: inline-block;
+		}
+	}
+
+	&.required {
+		.question::after {
+			content: '*';
+			color: $danger;
+			padding-left: 3px;
+		}
+	}
+
+	.sp {
+		height: 1px;
+		background: $ef-border;
+		position: absolute;
+		bottom: 5px;
+		left: 20px;
+		right: 20px;
+	}
+}
+
+@import './single-line-text.scss';
+@import './paragraph-text.scss';
+@import './multi-choice.scss';
+@import './number.scss';
+
+@import './rating.scss';
+@import './radio.scss';
+@import './file.scss';
+@import './date-time.scss';
+
+@import './phone.scss';
+@import './email.scss';
+@import './website.scss';

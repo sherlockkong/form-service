@@ -1,0 +1,25 @@
+.control-item {
+	@include flex-center-v;
+	font-size: $ef-font-size-sm;
+	padding: 3px 10px;
+	margin: 6px 0;
+
+	cursor: pointer;
+
+	.ci-icon {
+		color: $ef-accent;
+
+		font-size: $ef-icon-18;
+
+		margin-right: 10px;
+	}
+
+	&:hover {
+		background: $ef-accent;
+
+		.ci-icon,
+		.ci-text {
+			color: white;
+		}
+	}
+}

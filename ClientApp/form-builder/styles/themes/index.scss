@@ -1,0 +1,26 @@
+@mixin flex-center-h-v {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin flex-center-v {
+	display: flex;
+	align-items: center;
+}
+
+@mixin row-flex {
+	display: flex;
+}
+
+@mixin column-flex {
+	display: flex;
+	flex-direction: column;
+}
+
+@import "../../../common/styles/bootstrap/scss/bootstrap.scss";
+
+@import './red.scss';
+@import './blue.scss';
+
+@import "../layout.scss";

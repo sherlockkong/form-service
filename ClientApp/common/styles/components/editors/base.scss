@@ -1,0 +1,231 @@
+.ef-control {
+	position: relative;
+
+	width: 100%;
+	min-height: 30px;
+	margin: 0 0 10px 0;
+	padding: 0;
+
+	> .efc-label {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		display: flex;
+		float: left;
+		flex-direction: column;
+
+		width: 38%;
+		height: 30px;
+		padding: 0 5px 0 0;
+
+		text-align: left;
+		white-space: normal;
+
+		color: transparentize($ef-text, .1);
+		border-radius: 0;
+
+		font-size: 12px;
+		font-weight: normal;
+		line-height: normal;
+
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: flex-start;
+		align-content: center;
+
+		> span {
+			display: block;
+		}
+
+		&.efc-label-has-error {
+			padding-right: 30px;
+
+			> div {
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				display: block;
+
+				width: 30px;
+				height: 30px;
+
+				text-align: center;
+
+				color: $danger;
+
+				font-size: 18px;
+				line-height: 30px;
+
+				> div {
+					position: absolute;
+					z-index: $zindex-popover;
+					top: 0;
+					left: 100%;
+
+					min-width: 200px;
+					max-width: 260px;
+					padding: 5px 10px;
+
+					transition: opacity .2s ease-in-out;
+					text-align: left;
+					pointer-events: none;
+
+					opacity: 0;
+					color: $ef-text;
+					border-radius: $ef-border-rad;
+					background-color: $ef-bg-lt;
+					box-shadow: $ef-shadow-border;
+
+					font-size: $ef-font-size-sm;
+					line-height: 20px;
+				}
+
+				&:hover {
+					color: darken($danger, 15%);
+
+					> div {
+						pointer-events: all;
+
+						opacity: 1;
+					}
+				}
+
+
+				&.show-tooltip {
+					> div {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	> .efc-content {
+		display: block;
+
+		width: 62%;
+		margin-left: 38%;
+	}
+
+	&.efc-labels-on-top {
+		> .efc-label {
+			position: relative;
+			z-index: 1;
+
+			display: flex;
+			float: none;
+			overflow: visible;
+			flex-direction: column;
+
+			width: 100%;
+			height: 30px;
+			padding: 0 0 0 0;
+
+			text-align: left;
+			white-space: normal;
+
+			opacity: .9;
+			color: $ef-text;
+			border-radius: 0;
+
+			font-size: 12px;
+			font-weight: normal;
+			line-height: normal;
+
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-items: flex-start;
+			align-content: center;
+
+			> span {
+				display: block;
+			}
+
+			&.efc-label-has-error {
+				> span {
+					overflow: hidden;
+
+					width: calc(100% - 30px);
+
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+				> div {
+					> div {
+						left: 0;
+
+						transform: translateX(-100%);
+					}
+				}
+			}
+		}
+
+		> .efc-content {
+			display: block;
+
+			width: 100%;
+			margin-left: 0;
+		}
+
+		&.efc-label-empty {
+			> .efc-label {
+				position: initial;
+
+				display: block;
+				float: none;
+				overflow: hidden;
+
+				height: 5px;
+
+				> span {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.ef-control.efc-disabled {
+	> .efc-label {
+		opacity: .6;
+	}
+}
+
+.efc-boolean {
+	position: relative;
+
+	width: 100%;
+	height: 30px;
+
+	> .efc-radio {
+		position: absolute;
+		top: 0;
+
+		width: 50%;
+	}
+
+	> .true {
+		left: 0;
+	}
+
+	> .false {
+		right: 0;
+	}
+}
+
+.ef-control.efc-inverted {
+	> .efc-label {
+		color: transparentize($ef-text-inv, .1);
+
+		&.efc-label-has-error {
+			> div {
+				> div {
+					color: $ef-text-inv;
+					background-color: $ef-bg-inv-lt;
+				}
+			}
+		}
+	}
+}

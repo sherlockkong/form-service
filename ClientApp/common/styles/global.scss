@@ -1,0 +1,34 @@
+.ef-abs-icon {
+	position: absolute;
+
+	display: block;
+
+	width: $ef-size-default;
+	height: $ef-size-default;
+	padding: 0;
+
+	text-align: center;
+
+	font-size: $ef-icon-20;
+	line-height: $ef-size-default;
+}
+
+.ef-size-sm {
+	.ef-abs-icon {
+		width: $ef-size-small;
+		height: $ef-size-small;
+
+		font-size: $ef-icon-18;
+		line-height: $ef-size-small;
+	}
+}
+
+.ef-size-lg {
+	.ef-abs-icon {
+		width: $ef-size-large;
+		height: $ef-size-large;
+
+		font-size: $ef-icon-36;
+		line-height: $ef-size-large;
+	}
+}

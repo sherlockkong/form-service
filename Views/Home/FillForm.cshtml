@@ -1,0 +1,49 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <base href="~/" />
+    <title>Fill Form</title>
+
+    <script>
+        window.App = {
+            formId: '@ViewBag.formId',
+            formDataId: '@ViewBag.formDataId',
+        };
+    </script>
+    <link rel="stylesheet" href="~/fonts/index.css" type="text/css" />
+    <link rel="stylesheet" href="~/materialdesignicons/materialdesignicons.2.4.85.min.css" />
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/dist/form-data-editor.css" asp-append-version="true" />
+    </environment>
+</head>
+<body class="theme-@ViewBag.theme">
+    <div id="app">
+        <style type="text/css">
+            .spinner { position: fixed; top: calc(50% - 9px); left: calc(50% - 35px); width: 70px; text-align: center; }
+            .spinner > div { display: inline-block; width: 18px; height: 18px; background-color: #fff; border-radius: 100%; animation: sk-bouncedelay 1.4s infinite ease-in-out both; }
+            .spinner .bounce1 { animation-delay: -0.32s; }
+            .spinner .bounce2 { animation-delay: -0.16s; }
+            @@keyframes sk-bouncedelay { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
+        </style>
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+
+    <environment include="Development">
+        <script src="http://localhost:8080/vendor.js" asp-append-version="true"></script>
+        <script src="http://localhost:8080/form-data-editor.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/dist/vendor.js" asp-append-version="true"></script>
+        <script src="~/dist/form-data-editor.js" asp-append-version="true"></script>
+    </environment>
+</body>
+</html>

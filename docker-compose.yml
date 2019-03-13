@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:11.1
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: xA123456
+    volumes:
+    - /root/product-data/form-service/pgdata:/var/lib/postgresql/data
+  form-service:
+    image: <-- the form-service image published by you -->
+    ports:
+    - 4080:5006
+    links:
+    - postgres:postgres
+    restart: always
+    environment:
+      WebHook: http://webhook-url
+      Storage__ConnectionString: User ID=postgres;Password=xA123456;Host=postgres;Port=5432;Database=forms;
+      SecurityKey: fake-security-key.
+    depends_on:
+    - postgres

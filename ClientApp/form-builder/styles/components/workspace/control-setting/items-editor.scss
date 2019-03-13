@@ -1,0 +1,41 @@
+.items-editor {
+	height: 90px;
+	overflow: auto;
+
+	.op-item {
+		position: relative;
+
+		input {
+			transition: $ef-transition;
+		}
+
+		.btn-ct {
+			position: absolute;
+			background: white;
+			top: 0;
+			right: 3px;
+			display: none;
+			height: 29px;
+		}
+
+		.delete-btn,
+		.down-btn,
+		.up-btn {
+			color: $ef-accent;
+			display: none;
+		}
+
+		&.selected {
+			.btn-ct,
+			.delete-btn,
+			.down-btn,
+			.up-btn {
+				display: inline-block;
+			}
+
+			input {
+				border-bottom: 1px solid $ef-accent !important;
+			}
+		}
+	}
+}

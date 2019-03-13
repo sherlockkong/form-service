@@ -1,0 +1,354 @@
+$ef-stack-height: 20px;
+$ef-chevron-width: 24px;
+$ef-menu-offset: 4px;
+
+.ef-dd {
+	position: relative;
+
+	color: $ef-text;
+
+	font-size: $ef-font-size-sm;
+
+	> i {
+		width: $ef-chevron-width !important;
+
+		transition: color .2s ease-in-out;
+		pointer-events: none;
+
+		font-size: $ef-icon-18;
+	}
+
+	&.ef-inverted {
+		color: $ef-text-inv;
+	}
+
+	&.ef-dd-chevron {
+		> .ef-btn {
+			min-width: $ef-size-default + $ef-chevron-width;
+
+			> span {
+				padding-right: $ef-chevron-width;
+			}
+
+			&.ef-stacked {
+				> i {
+					padding-right: $ef-chevron-width;
+				}
+			}
+		}
+		> .ef-btn.ef-size-sm {
+			min-width: $ef-size-small + $ef-chevron-width;
+		}
+		> .ef-btn.ef-size-lg {
+			min-width: $ef-size-large + $ef-chevron-width;
+		}
+	}
+
+	&:not(.ef-size-sm).ef-stacked {
+		min-width: $ef-size-large;
+		height: $ef-size-large;
+
+		line-height: $ef-size-large;
+
+		> i {
+			font-size: $ef-icon-24;
+			line-height: $ef-size-large;
+		}
+	}
+
+	&.ef-size-sm.ef-stacked {
+		min-width: $ef-size-default;
+		height: $ef-size-default;
+
+		line-height: $ef-size-default;
+
+		> i {
+			line-height: $ef-size-default;
+		}
+	}
+
+	&.ef-size-lg {
+		> i {
+			font-size: $ef-icon-24;
+		}
+	}
+
+	> i.ef-ch-accent {
+		color: white;
+	}
+
+	&:hover {
+		> i.ef-ch-link {
+			color: $ef-accent;
+		}
+	}
+
+	&.ef-block {
+		> .ef-btn {
+			width: 100%;
+		}
+	}
+}
+
+@keyframes menu-show {
+	0% {
+		transform: scale(.75) translateY(-40px);
+
+		opacity: .0;
+	}
+	100% {
+		transform: scale(1);
+
+		opacity: 1;
+	}
+}
+
+.ef-dd-menu {
+	position: absolute;
+	z-index: $zindex-popover;
+
+	transform-origin: right top;
+	animation: menu-show .1s 1 ease-in-out both;
+
+	border-radius: $ef-border-rad;
+	background-color: $ef-bg-lt;
+	box-shadow: none;
+
+	&.ef-dd-menu-up {
+		transform-origin: right bottom;
+	}
+
+	&.ef-dd-menu-center {
+		transform-origin: center top;
+
+		&.ef-dd-menu-up {
+			transform-origin: center bottom;
+		}
+	}
+
+	&.ef-dd-menu-left {
+		transform-origin: left top;
+
+		&.ef-dd-menu-up {
+			transform-origin: left bottom;
+		}
+	}
+
+	.ef-dd-menu-header {
+		position: relative;
+
+		display: block;
+		overflow: hidden;
+
+		width: auto;
+		height: 30px;
+
+		color: transparentize($ef-text, .38);
+
+		line-height: 30px;
+
+		> span {
+			position: absolute;
+
+			display: block;
+			overflow: hidden;
+
+			width: auto;
+			height: 30px;
+			padding: 0 10px;
+
+			text-transform: uppercase;
+			text-overflow: ellipsis;
+
+			background-color: $ef-bg-lt;
+
+			font-size: 11px;
+			line-height: 30px;
+		}
+	}
+
+	.ef-dd-menu-header::before {
+		position: absolute;
+		top: 14px;
+		left: 10px;
+
+		display: block;
+
+		width: calc(100% - 20px);
+		height: 1px;
+
+		content: '';
+
+		background-color: darken($ef-bg-lt, 5%);
+	}
+
+	.ef-dd-menu-divider {
+		display: block;
+
+		width: calc(100% - 20px);
+		height: 1px;
+		margin: 5px 10px;
+
+		background-color: darken($ef-bg-lt, 5%);
+	}
+
+	.ef-dd-menu-scrollbar {
+		> .btn {
+			display: flex;
+			overflow: hidden;
+
+			width: 100%;
+			height: $ef-size-default;
+			margin: 0;
+			padding: 0 10px;
+
+			text-align: left;
+			text-overflow: ellipsis;
+
+			color: $ef-text;
+			border-radius: 0;
+			background-color: transparent;
+
+			font-size: $ef-font-size-sm;
+			line-height: $ef-size-default;
+
+		    .ef-dd-item-text {
+				overflow: hidden;
+
+				max-width: 100%;
+
+				white-space: nowrap;
+				text-overflow: ellipsis;
+
+				flex: 1 1 auto;
+			}
+
+			> i {
+				display: block;
+				float: left;
+
+				width: 20px;
+				height: $ef-size-default;
+				margin-right: 10px;
+
+				text-align: center;
+
+				font-size: 16px;
+				line-height: $ef-size-default;
+			}
+
+			&.disabled:focus {
+				box-shadow: none;
+			}
+
+			&:not([disabled]):not(.disabled):hover {
+				background-color: darken($ef-bg-lt, 5%);
+			}
+
+			&:not([disabled]):not(.disabled):active {
+				background-color: darken($ef-bg-lt, 10%);
+			}
+		}
+
+		> .btn.selected {
+			color: #fff;
+			background-color: $ef-accent;
+
+			> i {
+				color: #fff;
+			}
+
+			&:not([disabled]):not(.disabled):hover {
+				background-color: darken($ef-accent, 5%);
+			}
+
+			&:not([disabled]):not(.disabled):active {
+				background-color: darken($ef-accent, 10%);
+			}
+		}
+	}
+}
+
+.ef-dd-item-secondary {
+	display: flex;
+	overflow: hidden;
+
+	max-width: 100%;
+	margin-left: 4px;
+
+	&-text {
+		font-size: $ef-font-size-sm;
+
+		display: inline-block;
+		overflow: hidden;
+
+		max-width: 100%;
+
+		text-overflow: ellipsis;
+
+		opacity: .7;
+  	}
+
+	&-icon {
+		font-size: 16px;
+		line-height: $ef-size-default;
+
+		display: inline-block;
+
+		width: 20px;
+		height: $ef-size-default;
+		margin-left: 6px;
+
+		text-align: center;
+	}
+}
+
+.ef-dd-no-max {
+	.ef-dd-menu {
+		max-height: initial;
+	}
+}
+
+.ef-inverted {
+	.ef-dd-menu {
+		background-color: $ef-bg-inv-lt;
+
+		.ef-dd-menu-header {
+			color: transparentize($ef-text-inv, .38);
+
+			> span {
+				background-color: $ef-bg-inv-lt;
+			}
+		}
+
+		.ef-dd-menu-header::before {
+			background-color: darken($ef-bg-inv-lt, 5%);
+		}
+
+		.ef-dd-menu-divider {
+			background-color: darken($ef-bg-inv-lt, 5%);
+		}
+
+		> .btn {
+			color: $ef-text-inv;
+
+			&:not([disabled]):not(.disabled):hover {
+				background-color: darken($ef-bg-inv-lt, 5%);
+			}
+
+			&:not([disabled]):not(.disabled):active {
+				background-color: darken($ef-bg-inv-lt, 10%);
+			}
+		}
+
+		> .btn.selected {
+			&:not([disabled]):not(.disabled):hover {
+				background-color: darken($ef-accent, 5%);
+			}
+
+			&:not([disabled]):not(.disabled):active {
+				background-color: darken($ef-accent, 10%);
+			}
+		}
+	}
+}

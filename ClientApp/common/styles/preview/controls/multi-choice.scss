@@ -1,0 +1,14 @@
+.multi-choice {
+	.efc-checklist {
+		margin-top: 20px;
+		
+		> button {
+			background: none !important;
+			border-bottom: 1px solid $ef-border !important;
+		}
+
+		> .mdi {
+			color: $ef-accent;
+		}
+	}
+}

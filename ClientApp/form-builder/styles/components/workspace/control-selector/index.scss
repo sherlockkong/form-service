@@ -1,0 +1,13 @@
+.ap-control-selector {
+	background: white;
+	padding: 5px 0;
+	
+	@import './control-item.scss';
+
+	.cs-sep {
+		height: 1px;
+		background: rgba(0, 0, 0, .1);
+	}
+
+	margin-bottom: 20px;
+}

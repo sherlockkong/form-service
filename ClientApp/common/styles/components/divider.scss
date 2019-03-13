@@ -1,0 +1,23 @@
+// Divider
+.ef-divider {
+	height: 1px;
+	margin: 0;
+	border: none;
+	flex-shrink: 0;
+	background-color: $ef-bg-dk;
+
+	&--absolute {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	&--inset {
+		margin-left: 72px; 
+	}
+
+	&--inverted {
+		background-color: $ef-bg-inv-dk;
+	}
+}

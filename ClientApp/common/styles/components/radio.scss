@@ -1,0 +1,209 @@
+.efc-radio {
+	position: relative;
+
+	display: block;
+
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+	border: 0;
+	background: none;
+
+	> div {
+		position: absolute;
+		top: 5px;
+		left: 0;
+
+		width: 20px;
+		height: 20px;
+
+		transition: $ef-transition;
+
+		border: 2px solid transparent;
+		border-radius: 50%;
+		background-color: $ef-bg-dk;
+
+		> div {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			width: 0;
+			height: 0;
+
+			transition: $ef-transition;
+
+			border-radius: 50%;
+			background-color: $ef-accent;
+		}
+	}
+
+	> span {
+		display: block;
+
+		padding-top: 5px;
+		padding-left: 30px;
+
+		text-align: left;
+
+		color: $ef-text;
+
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+	&:focus {
+		border: none;
+		outline: 0 !important;
+		box-shadow: none;
+
+		> div {
+			box-shadow: 0 0 5px 0 $ef-accent;
+		}
+	}
+
+	&.efc-inline {
+		display: inline-block;
+
+		width: auto;
+	}
+}
+
+.efc-radio.checked {
+	> div {
+		border: 2px solid $ef-accent;
+
+		> div {
+			top: 2px;
+			left: 2px;
+
+			width: 12px;
+			height: 12px;
+		}
+	}
+
+	&:focus {
+		> div {
+			box-shadow: 0 0 5px 0 $ef-accent-dk;
+		}
+	}
+}
+
+.efc-invalid {
+	.efc-radio {
+		> div {
+			border: 2px solid transparent;
+			background-color: transparentize($danger, .62);
+		}
+
+		&:focus {
+			> div {
+				box-shadow: 0 0 5px 0 $danger;
+			}
+		}
+	}
+
+	.efc-radio.checked {
+		> div {
+			border: 2px solid $danger;
+
+			> div {
+				background-color: $danger;
+			}
+		}
+
+		&:focus {
+			> div {
+				box-shadow: 0 0 5px 0 $danger;
+			}
+		}
+	}
+}
+
+.efc-disabled {
+	.efc-radio {
+		> span {
+			opacity: .7;
+		}
+	}
+
+	.efc-radio.checked {
+		> div {
+			border: 2px solid transparentize($ef-accent, .62);
+			background-color: transparent;
+
+			> div {
+				background-color: transparentize($ef-accent, .62);
+			}
+		}
+	}
+}
+
+.efc-inverted {
+	.efc-radio {
+		> div {
+			background-color: $ef-bg-inv-dk;
+		}
+		> span {
+			color: $ef-text-inv;
+		}
+	}
+}
+
+.efc-radio {
+	&.efc-invalid {
+		> div {
+			border: 2px solid transparent;
+			background-color: transparentize($danger, .62);
+		}
+
+		&:focus {
+			> div {
+				box-shadow: 0 0 5px 0 $danger;
+			}
+		}
+
+		&.checked {
+			> div {
+				border: 2px solid $danger;
+
+				> div {
+					background-color: $danger;
+				}
+			}
+
+			&:focus {
+				> div {
+					box-shadow: 0 0 5px 0 $danger;
+				}
+			}
+		}
+	}
+
+	&.efc-inverted {
+		> div {
+			background-color: $ef-bg-inv-dk;
+		}
+		> span {
+			color: $ef-text-inv;
+		}
+	}
+
+	&[disabled] {
+		> span {
+			opacity: .7;
+		}
+
+		&.checked {
+			> div {
+				border: 2px solid transparentize($ef-accent, .62);
+				background-color: transparent;
+
+				> div {
+					background-color: transparentize($ef-accent, .62);
+				}
+			}
+		}
+	}
+}

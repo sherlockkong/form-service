@@ -1,0 +1,50 @@
+html, body,
+#app {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#app {
+	@include column-flex;
+	font-family: 'Open Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
+
+	.ap-main-menu {
+		flex: 0 0 90px;
+	}
+
+	.ap-workspace {
+		flex: 1;
+		position: relative;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		.ap-control-selector {
+			position: fixed;
+			top: 110px;
+			left: 0;
+			width: 160px;
+
+			transition: $ef-transition;
+
+			&.hidden {
+				left: -162px;
+			}
+		}
+
+		.ap-control-setting {
+			position: fixed;
+			top: 110px;
+			right: 20px;
+			width: 230px;
+
+			transition: $ef-transition;
+
+			&.hidden {
+				right: -232px;
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.file {
+	.file-input {
+		color: $ef-accent;
+	}
+
+	.file-item {
+		position: relative;
+		margin: 3px 0;
+		border: 1px solid $ef-border;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 30px;
+
+		.icon-btn {
+			padding: 2px 5px;
+			color: $ef-accent;
+			background: white;
+			cursor: pointer;
+		}
+
+		.fi-name {
+			width: calc(100% - 110px);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: inline-block;
+			padding-left: 12px;
+		}
+	}
+}

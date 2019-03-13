@@ -1,0 +1,271 @@
+.efc-checkbox {
+	position: relative;
+
+	display: block;
+
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
+	border: 0;
+	background: none;
+
+	> div {
+		position: absolute;
+		top: 5px;
+		left: 0;
+
+		width: 20px;
+		height: 20px;
+
+		transition: $ef-transition;
+
+		border: 2px solid transparent;
+		border-radius: $ef-border-rad;
+		background-color: $ef-bg-dk;
+
+		> div {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			width: 0;
+			height: 0;
+
+			transition: $ef-transition;
+
+			border-radius: 50%;
+			background-color: $ef-accent;
+		}
+
+		> i {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			display: block;
+
+			width: 100%;
+			height: 100%;
+			padding: 0;
+
+			text-align: center;
+
+			opacity: 0;
+			color: white;
+
+			font-size: 16px;
+			line-height: 16px;
+		}
+	}
+
+	> span {
+		display: block;
+
+		padding-top: 5px;
+		padding-left: 30px;
+
+		text-align: left;
+
+		color: $ef-text;
+
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+	&:focus {
+		border: none;
+		outline: 0 !important;
+		box-shadow: none;
+
+		> div {
+			box-shadow: 0 0 5px 0 $ef-accent;
+		}
+	}
+
+	&.efc-inline {
+		display: inline-block;
+
+		width: auto;
+	}
+}
+
+.efc-checkbox.checked {
+	> div {
+		border: 2px solid $ef-accent;
+
+		> div {
+			top: 0;
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+
+			border-radius: 0;
+		}
+
+		> i {
+			opacity: 1;
+		}
+	}
+
+	&:focus {
+		> div {
+			box-shadow: 0 0 5px 0 $ef-accent-dk;
+		}
+	}
+}
+
+.efc-invalid {
+	.efc-checkbox {
+		> div {
+			border: 2px solid transparent;
+			background-color: transparentize($danger, .62);
+		}
+
+		&:focus {
+			> div {
+				box-shadow: 0 0 5px 0 $danger;
+			}
+		}
+	}
+
+	.efc-checkbox.checked {
+		> div {
+			border: 2px solid $danger;
+			background-color: $danger;
+
+			> div {
+				background-color: $danger;
+			}
+		}
+
+		&:focus {
+			> div {
+				box-shadow: 0 0 5px 0 $danger;
+			}
+		}
+	}
+}
+
+.efc-disabled {
+	.efc-checkbox {
+		> span {
+			opacity: .7;
+		}
+	}
+
+	.efc-checkbox.checked {
+		> div {
+			border: 2px solid transparentize($ef-accent, .62);
+			background-color: transparent;
+
+			> div {
+				background-color: transparentize($ef-accent, .62);
+			}
+		}
+	}
+}
+
+.efc-inverted {
+	.efc-checkbox {
+		> span {
+			color: $ef-text-inv;
+		}
+	}
+}
+
+.efc-checkbox {
+	&.efc-invalid {
+		> div {
+			border: 2px solid transparent;
+			background-color: transparentize($danger, .62);
+		}
+
+		&:focus {
+			> div {
+				box-shadow: 0 0 5px 0 $danger;
+			}
+		}
+
+		&.checked {
+			> div {
+				border: 2px solid $danger;
+				background-color: $danger;
+
+				> div {
+					background-color: $danger;
+				}
+			}
+
+			&:focus {
+				> div {
+					box-shadow: 0 0 5px 0 $danger;
+				}
+			}
+		}
+	}
+
+	&.efc-inverted {
+		> div {
+			background-color: $ef-bg-inv-dk;
+		}
+		> span {
+			color: $ef-text-inv;
+		}
+	}
+
+	&[disabled] {
+		> span {
+			opacity: .7;
+		}
+
+		&.checked {
+			> div {
+				border: 2px solid transparentize($ef-accent, .62);
+				background-color: transparent;
+
+				> div {
+					background-color: transparentize($ef-accent, .62);
+				}
+
+				> i {
+					opacity: .7;
+				}
+			}
+		}
+	}
+}
+
+.efc-checkbox-wrapper {
+	position: relative;
+
+	display: flex;
+
+	width: 100%;
+
+	> div {
+		margin-right: 16px;
+		flex: 1 1 auto;
+	}
+
+	> .efc-checkbox {
+		display: flex;
+
+		align-items: center;
+
+        width: auto;
+        height: 30px;
+
+		> div {
+			position: relative;
+
+			top: 0;
+		}
+
+		> span {
+			padding: 0 0 0 8px;
+			line-height: normal;
+		}
+	}
+}

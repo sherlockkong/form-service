@@ -1,0 +1,18 @@
+@import '../../../common/styles/preview/index.scss';
+
+.submitted-tip {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	background: white;
+	opacity: .6;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	white-space: pre;
+}
